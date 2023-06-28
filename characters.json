@@ -1,0 +1,93 @@
+{
+  "Bunny": {
+    "path": "acnh/",
+    "filename": "bunny",
+    "bg": 2,
+    "variant": 1
+  },
+  "K.K. Slider": {
+    "path": "acnh/",
+    "filename": "kk",
+    "bg": 2,
+    "variant": 2
+  },
+  "Patamon": {
+    "path": "digimon/",
+    "filename": "patamon",
+    "bg": 3,
+    "variant": 2
+  },
+  "Terriermon": {
+    "path": "digimon/",
+    "filename": "terriermon",
+    "bg": 3,
+    "variant": 2
+  },
+  "Isabelle": {
+    "path": "isabelle/",
+    "filename": "isabelle",
+    "bg": 1,
+    "variant": 3,
+    "overlay": 1
+  },
+  "Kairobot": {
+    "path": "kairobot/",
+    "filename": "kairobot",
+    "bg": 1,
+    "variant": 1
+  },
+  "Kirby": {
+    "path": "kirby/",
+    "filename": "kirby",
+    "bg": 3,
+    "variant": 3
+  },
+  "Waddle Dee": {
+    "path": "kirby/",
+    "filename": "wadle-dee",
+    "bg": 3,
+    "variant": 2
+  },
+  "Link": {
+    "path": "link/",
+    "filename": "link",
+    "bg": 2,
+    "variant": 1
+  },
+  "Mario": {
+    "path": "mario/",
+    "filename": "mario",
+    "bg": 1,
+    "variant": 3
+  },
+  "Luigi": {
+    "path": "mario/",
+    "filename": "luigi",
+    "bg": 1,
+    "variant": 2
+  },
+  "Pikachu": {
+    "path": "pokemon/",
+    "filename": "pikachu",
+    "bg": 2,
+    "variant": 2
+  },
+  "Jigglypuff": {
+    "path": "pokemon/",
+    "filename": "jigglypuff",
+    "bg": 2,
+    "variant": 1
+  },
+  "Sonic": {
+    "path": "sonic/",
+    "filename": "sonic",
+    "bg": 3,
+    "variant": 3
+  },
+  "Tails": {
+    "path": "sonic/",
+    "filename": "tails",
+    "bg": 3,
+    "variant": 2
+  }
+}
