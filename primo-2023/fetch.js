@@ -59,7 +59,7 @@ function render(dateString) {
   var d = new Date();
   var month = d.getMonth() + 1;
   var day = d.getDate();
-  var year = d.getYear();
-  $('<br /><br />' + dateInfo.character + "<br />" + day + '-' + month + '-' + year).appendTo('.full-note-message');
+  var year = d.getFullYear();
+  $('<br /><br />—' + dateInfo.character + "<br />" + day + '-' + month + '-' + year).appendTo('.full-note-message');
   $(".black-hide").delay(1000).fadeOut(500);
 }
