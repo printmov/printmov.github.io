@@ -43,7 +43,7 @@ function fetchDate() {
 
 function render(dateString) {
   var dateInfo = dateJson[dateString];
-  var character = charactersJson[dateJson.character];
+  var character = charactersJson[dateInfo.character];
   var filename = character.path + character.filename + "-" + ((dateInfo.count % character.variant) + 1 ) + ".png";
   $(".character-image").attr("src", filename);
   var bgFilename = character.path + "bg-" + (Math.floor(Math.random() * character.bg) + 1) + ".png";
