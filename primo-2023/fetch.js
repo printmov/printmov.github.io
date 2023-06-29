@@ -35,7 +35,7 @@ function fetchDate() {
     month = '0' + month;
   }
   $.getJSON("message-database.json", function(json) {
-    dateJson = json;
+    dateJson = json[day + '-' + month];
     console.log(json[day + '-' + month]);
     render();
   });
