@@ -56,5 +56,10 @@ function render(dateString) {
     $(".overlay").hide();
   }
   $(".message").text(dateInfo.message);
+  var d = new Date();
+  var month = d.getMonth() + 1;
+  var day = d.getDate();
+  var year = d.getYear();
+  $('<br /><br />' + dateInfo.character + "<br />" + day + '-' + month + '-' + year).appendTo('.full-note-message');
   $(".black-hide").delay(1000).fadeOut(500);
 }
