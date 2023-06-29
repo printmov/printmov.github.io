@@ -1,9 +1,10 @@
 $(window).on('load', function() {
 
   fetchCharacters();
-  fetch();
 
 });
+
+var characters;
 
 function fetchCharacters() {
   var d = new Date();
@@ -16,7 +17,9 @@ function fetchCharacters() {
     month = '0' + month;
   }
   $.getJSON("characters.json", function(json) {
+    characters = json;
     console.log(json);
+    fetchDate();
   });
 }
 
