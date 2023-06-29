@@ -35,15 +35,16 @@ function fetchDate() {
     month = '0' + month;
   }
   $.getJSON("message-database.json", function(json) {
-    dateJson = json[day + '-' + month];
+    dateJson = json;
     console.log(json[day + '-' + month]);
-    render();
+    render(day + '-' + month);
   });
 }
 
-function render() {
+function render(dateString) {
+  var dateInfo = dateJson[dateString];
   var character = charactersJson[dateJson.character];
-  var filename = character.path + character.filename + "-" + ((dateJson.count % character.variant) + 1 ) + ".png";
+  var filename = character.path + character.filename + "-" + ((dateInfo.count % character.variant) + 1 ) + ".png";
   $(".character-image").attr("src", filename);
   var bgFilename = character.path + "bg-" + (Math.floor(Math.random() * character.bg) + 1) + ".png";
   $(".background").attr("src", bgFilename);
@@ -54,6 +55,6 @@ function render() {
   else {
     $(".overlay").hide();
   }
-  $(".message").text(dateJson.message);
-  $(".black-hide").fadeOut(500);
+  $(".message").text(dateInfo.message);
+  $(".black-hide").delay(1000).fadeOut(500);
 }
