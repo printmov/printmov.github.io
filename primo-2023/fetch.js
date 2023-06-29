@@ -18,7 +18,7 @@ function fetchCharacters() {
     month = '0' + month;
   }
   $.getJSON("characters.json", function(json) {
-    characters = json;
+    charactersJson = json;
     console.log(json);
     fetchDate();
   });
