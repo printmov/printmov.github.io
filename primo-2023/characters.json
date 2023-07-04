@@ -42,6 +42,12 @@
     "bg": 3,
     "variant": 3
   },
+  "Kirbyฺ": {
+    "path": "21-07/",
+    "filename": "kirby",
+    "bg": 1,
+    "variant": 1
+  },
   "Waddle Dee": {
     "path": "kirby/",
     "filename": "wadle-dee",
