@@ -63,13 +63,13 @@
   "Mario": {
     "path": "mario/",
     "filename": "mario",
-    "bg": 1,
+    "bg": 4,
     "variant": 3
   },
   "Luigi": {
     "path": "mario/",
     "filename": "luigi",
-    "bg": 1,
+    "bg": 4,
     "variant": 2
   },
   "Pikachu": {
