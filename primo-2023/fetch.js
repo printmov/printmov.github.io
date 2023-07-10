@@ -51,6 +51,7 @@ function render(dateString) {
   if(character["overlay"] > 0) {
     var overlayFilename = character.path + "overlay-" + (Math.floor(Math.random() * character.overlay) + 1) + ".png";
     $(".overlay").attr("src", overlayFilename);
+    $(".overlay").show();
   }
   else {
     $(".overlay").hide();
