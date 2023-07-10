@@ -51,7 +51,7 @@
   "Waddle Dee": {
     "path": "kirby/",
     "filename": "wadle-dee",
-    "bg": 3,
+    "bg": 2,
     "variant": 2
   },
   "Link": {
