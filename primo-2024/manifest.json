@@ -1,10 +1,10 @@
 {
   "name": "MetaNav",
   "short_name": "MetaNav",
-  "start_url": "/",
+  "start_url": "/primo-2024/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#860106",
+  "theme_color": "#860106",
   "icons": [
     {
       "src": "img/icon.png",
