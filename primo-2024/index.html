@@ -32,6 +32,27 @@
         <div id="unity-build-title">Persona 5 Primo</div>
       </div>
     </div>
+
+    <script>
+      function playRandomMP3() {
+        const randomNum = Math.floor(Math.random() * 8) + 1;
+        const audio = new Audio(`sounds/${randomNum}.mp3`);
+        audio.loop = true;
+        audio.volume = 0.25;
+        audio.play().catch(() => {
+          const retryPlay = () => {
+            audio.play().then(() => {
+              window.removeEventListener('click', retryPlay);
+              window.removeEventListener('touchstart', retryPlay);
+            }).catch(() => {});
+          };
+          window.addEventListener('click', retryPlay);
+          window.addEventListener('touchstart', retryPlay);
+        });
+      }
+      window.addEventListener('load', playRandomMP3);
+    </script>
+
     <script>
 
       var container = document.querySelector("#unity-container");
@@ -48,21 +69,21 @@
       // way that non-critical warnings and error messages are presented to the
       // user.
       function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
+        // function updateBannerVisibility() {
+        //   warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        // }
+        // var div = document.createElement('div');
+        // div.innerHTML = msg;
+        // warningBanner.appendChild(div);
+        // if (type == 'error') div.style = 'background: red; padding: 10px;';
+        // else {
+        //   if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        //   setTimeout(function() {
+        //     warningBanner.removeChild(div);
+        //     updateBannerVisibility();
+        //   }, 5000);
+        // }
+        // updateBannerVisibility();
       }
 
       var buildUrl = "Build";
