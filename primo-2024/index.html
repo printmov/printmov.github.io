@@ -36,49 +36,28 @@
   </div>
 
   <script>
-
-    let audio;
-
     function playRandomMP3() {
       const randomNum = Math.floor(Math.random() * 8) + 1;
-      audio = new Audio(`sounds/${randomNum}.mp3`);
+      const audio = new Audio(`sounds/${randomNum}.mp3`);
       audio.loop = true;
-      audio.volume = 0.25;
-      audio.play();
-      // audio.play().catch(() => {
-      //   const retryPlay = () => {
-      //     audio.play().then(() => {
-      //       window.removeEventListener('click', retryPlay);
-      //       window.removeEventListener('touchstart', retryPlay);
-      //     }).catch(() => {});
-      //   };
-      //   window.addEventListener('click', retryPlay);
-      //   window.addEventListener('touchstart', retryPlay);
-      // });
+      audio.volume = 0.5;
+      function handleVisibilityChange() {
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      }
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+      audio.play().catch(() => {
+        const retryPlay = () => {
+          audio.play();
+        };
+        window.addEventListener('click', retryPlay);
+        window.addEventListener('touchstart', retryPlay);
+      });
     }
     window.addEventListener('load', playRandomMP3);
-
-    function handleVisibilityChange() {
-      if (document.hidden) {
-        audio.pause();
-      } else {
-        audio.play().catch(() => {
-          // If the play fails, set up event listeners for user interaction
-          const retryPlay = () => {
-            audio.play().then(() => {
-              // Remove the event listeners once the audio plays successfully
-              window.removeEventListener('click', retryPlay);
-              window.removeEventListener('touchstart', retryPlay);
-            }).catch(() => {
-              // If it still fails, keep the event listeners
-            });
-          };
-          // Add event listeners for user interaction
-          window.addEventListener('click', retryPlay);
-          window.addEventListener('touchstart', retryPlay);
-        });
-      }
-    }
   </script>
 
   <script>
