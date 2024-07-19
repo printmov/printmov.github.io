@@ -3,18 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>MetaNav</title>
+    <title>Unity WebGL Player | Persona 5 Primo</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-
-    <meta property="og:image" content="img/icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="MetaNav">
-    <link rel="apple-touch-icon" href="img/icon.png">
-    <link rel="manifest" href="manifest.json">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -48,29 +39,29 @@
       // way that non-critical warnings and error messages are presented to the
       // user.
       function unityShowBanner(msg, type) {
-        // function updateBannerVisibility() {
-        //   warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        // }
-        // var div = document.createElement('div');
-        // div.innerHTML = msg;
-        // warningBanner.appendChild(div);
-        // if (type == 'error') div.style = 'background: red; padding: 10px;';
-        // else {
-        //   if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-        //   setTimeout(function() {
-        //     warningBanner.removeChild(div);
-        //     updateBannerVisibility();
-        //   }, 5000);
-        // }
-        // updateBannerVisibility();
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
       }
 
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build.data.br",
-        frameworkUrl: buildUrl + "/Build.framework.js.br",
-        codeUrl: buildUrl + "/Build.wasm.br",
+        dataUrl: buildUrl + "/Build.data.unityweb",
+        frameworkUrl: buildUrl + "/Build.framework.js.unityweb",
+        codeUrl: buildUrl + "/Build.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Persona 5 Primo",
@@ -86,7 +77,7 @@
       // config.matchWebGLToCanvasSize = false;
 
       // if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-      if (true) {
+	  if (true) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
         var meta = document.createElement('meta');
